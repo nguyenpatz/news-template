@@ -2,6 +2,7 @@
 
 @import 'variables.scss';
 @import 'mixins.scss';
+
 * {
     margin: 0;
     padding: 0;
@@ -9,17 +10,16 @@
     background-color: $background-body;
 }
 
-@include MediaQuery($desktop-width) {
     .header {
 
         padding: 50px 60px;
         font-family: sans-serif;
 
         .header-logo {
-            
+
             img {
                 width: 50px;
-                vertical-align: middle;    
+                vertical-align: middle;
             }
 
             float: left;
@@ -29,22 +29,19 @@
 
         .header-menu {
 
-                img {
-                    width: 50px;
-                    vertical-align: middle;
-                    margin-left: 20px;
-                }
-            
-                float: right;
+            img {
+                width: 50px;
+                vertical-align: middle;
+                margin-left: 20px;
+            }
 
-                font-size: 1.25rem;
-                font-weight: bold;
-               
-            
+            float: right;
+
+            font-size: 1.25rem;
+            font-weight: bold;
+
+
         }
-
-        
-
     }
 
     .header::after {
@@ -65,69 +62,231 @@
     }
 
     .row-content {
-        margin-top: 40px;
-        display: grid;
-        grid-template-columns: 20% 40% 20% 20%;
-        justify-content: center;
-        .column {
+                margin-top: 40px;
+                display: grid;
+                justify-content: center;
+                @include MediaQuery($desktop-width) {
 
-            border-left: 1px solid black;
-
-            .article {
-
-                width: 100%;
-                padding: 0 30px;
-                .column-title {
-
-                    a {
-                        display: inline-block;
-                        line-height: 50px;
-                        word-spacing: 4px;
-                        font-size: 1.75rem;
-                        font-family: "Roboto Mono";
-                        text-decoration: none;
-                        color: black;
-                        font-weight: 700;
-                    }
-
-                    .column-title-img {
-
-                        img {
-                            max-width: 100%;
+                    grid-template-columns: 20% 40% 20% 20%;
+                }
+                .column {
+        
+                    border-left: 1px solid black;
+        
+                    .article {
+        
+                        width: 100%;
+                        padding: 0 30px;
+        
+                        .column-title {
+        
+                            a {
+                                display: inline-block;
+                                line-height: 45px;
+                                font-size: 1.75rem;
+                                font-family: "Roboto Mono";
+                                text-decoration: none;
+                                color: black;
+                                font-weight: 700;
+                            }
+        
+                            .column-title-img {
+        
+                                font-family: "Roboto Mono";
+        
+                                img {
+                                    max-width: 100%;
+                                }
+                            }
+        
+        
                         }
-                    }
-                    
-                }
-
-                .column-content {
-                    font-size: 1.25rem;
-                    font-family: "Roboto Mono";
-                    font-weight: 400;
-                    line-height: 30px;
-                }
-
-                .column-author {
-
-                    display: flex;
-                    align-items: center;
-                    width: 100%;
-
-                    .column-author-avatar {
-                        
-                        img {
-                            width: 48px;
-                            border-radius: 5px;
+        
+                        .column-content {
+                            font-size: 1.1rem;
+                            font-family: "Roboto Mono";
+                            font-weight: 400;
+                            line-height: 30px;
+                            margin: 20px 0;
+        
+                            p {
+                                margin-bottom: 20px;
+                            }
                         }
+        
+                        .column-author {
+        
+                            display: flex;
+                            align-items: center;
+                            width: 100%;
+        
+                            .column-author-avatar {
+        
+                                img {
+                                    width: 48px;
+                                    border-radius: 5px;
+                                }
+                            }
+        
+                            .column-author-detail {
+                                font-family: "Roboto Mono";
+        
+                                .author-name {
+                                    font-weight: bold;
+                                }
+                            }
+        
+                        }
+        
+                        .column-line {
+                            margin: 20px 0;
+                            border-bottom: 1px solid $gray ;
+                        }
+        
                     }
-
-                    .column-author-detail {
-                        font-family: "Roboto Mono";
-                    }
-                    
+        
                 }
-                
+        
+        
+        
             }
-            
-        }
-    }
-}
+
+// @include MediaQuery($desktop-width) {
+//     .header {
+
+//         padding: 50px 60px;
+//         font-family: sans-serif;
+
+//         .header-logo {
+
+//             img {
+//                 width: 50px;
+//                 vertical-align: middle;
+//             }
+
+//             float: left;
+//             font-size: 2rem;
+//             font-weight: bold;
+//         }
+
+//         .header-menu {
+
+//             img {
+//                 width: 50px;
+//                 vertical-align: middle;
+//                 margin-left: 20px;
+//             }
+
+//             float: right;
+
+//             font-size: 1.25rem;
+//             font-weight: bold;
+
+
+//         }
+//     }
+
+//     .header::after {
+//         content: "";
+//         clear: both;
+//         display: table;
+//     }
+
+//     .news-title {
+//         font-family: "Roboto Mono";
+//         text-align: center;
+//         font-size: 1.75;
+//         font-weight: 700;
+
+//         span {
+//             border-bottom: 3px solid black;
+//         }
+//     }
+
+//     .row-content {
+//         margin-top: 40px;
+//         display: grid;
+//         grid-template-columns: 20% 40% 20% 20%;
+//         justify-content: center;
+
+//         .column {
+
+//             border-left: 1px solid black;
+
+//             .article {
+
+//                 width: 100%;
+//                 padding: 0 30px;
+
+//                 .column-title {
+
+//                     a {
+//                         display: inline-block;
+//                         line-height: 45px;
+//                         font-size: 1.75rem;
+//                         font-family: "Roboto Mono";
+//                         text-decoration: none;
+//                         color: black;
+//                         font-weight: 700;
+//                     }
+
+//                     .column-title-img {
+
+//                         font-family: "Roboto Mono";
+
+//                         img {
+//                             max-width: 100%;
+//                         }
+//                     }
+
+
+//                 }
+
+//                 .column-content {
+//                     font-size: 1.1rem;
+//                     font-family: "Roboto Mono";
+//                     font-weight: 400;
+//                     line-height: 30px;
+//                     margin: 20px 0;
+
+//                     p {
+//                         margin-bottom: 20px;
+//                     }
+//                 }
+
+//                 .column-author {
+
+//                     display: flex;
+//                     align-items: center;
+//                     width: 100%;
+
+//                     .column-author-avatar {
+
+//                         img {
+//                             width: 48px;
+//                             border-radius: 5px;
+//                         }
+//                     }
+
+//                     .column-author-detail {
+//                         font-family: "Roboto Mono";
+
+//                         .author-name {
+//                             font-weight: bold;
+//                         }
+//                     }
+
+//                 }
+
+//                 .column-line {
+//                     margin: 20px 0;
+//                     border-bottom: 1px solid $gray ;
+//                 }
+
+//             }
+
+//         }
+
+
+//     }
+// }
